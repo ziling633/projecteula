@@ -1,0 +1,24 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+  int sum = 0;
+  int first_term = 1;
+  int second_term = 2;
+  int next_term = 0;
+  vector <int> numbers = {1,2};
+  
+  while (second_term < 4000000) {
+    next_term = first_term + second_term;
+    first_term = second_term;
+    second_term = next_term;
+    numbers.push_back(second_term);
+  }
+  for (auto i: numbers) {
+    if (i%2 == 0){
+      sum += i;
+    }
+  }
+  cout << sum;
+}
